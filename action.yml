@@ -1,4 +1,4 @@
-name: Simple replace string in file
+name: Simple replace string in files
 description: "Replace string in file for Ubuntu, Macos or Windows."
 branding:
   icon: "book-open"
@@ -17,9 +17,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkouts
-      uses: actions/checkout@v3
-
     - name: Replace string in file for Ubuntu or Windows
       if: ${{ runner.os == 'Linux' || runner.os == 'Windows' }}
       shell: bash
