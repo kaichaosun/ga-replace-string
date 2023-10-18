@@ -1,0 +1,28 @@
+name: Replace string in files
+description: "Replace string in file for Ubuntu, Macos or Windows."
+branding:
+  icon: "book-open"
+  color: "white"
+inputs:
+  file:
+    description: "File to replace string in."
+    required: true
+  old-string:
+    description: "String to replace."
+    required: true
+  new-string:
+    description: "String to replace with."
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Replace string in file for Ubuntu or Windows
+      if: ${{ runner.os == 'Linux' || runner.os == 'Windows' }}
+      shell: bash
+      run: sed -i 's/${{ inputs.old-string }}/${{ inputs.new-string }}/g' ${{ inputs.file }}
+
+    - name: Replace string in file for Macos
+      if: ${{ runner.os == 'macOS' }}
+      shell: bash
+      run: sed -i '' 's/${{ inputs.old-string }}/${{ inputs.new-string }}/g' ${{ inputs.file }}
