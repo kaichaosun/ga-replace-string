@@ -22,7 +22,7 @@ jobs:
           new-string: World
 
       - name: Check if string was replaced
-        uses: GuillaumeFalourd/assert-command-line-output@v2
+        uses: GuillaumeFalourd/assert-command-line-output@v3
         with:
           command_line: cat tests/test-file.txt
           contains: Hello World
@@ -35,7 +35,7 @@ jobs:
           new-string: Github
 
       - name: Check if string was replaced
-        uses: GuillaumeFalourd/assert-command-line-output@v2
+        uses: GuillaumeFalourd/assert-command-line-output@v3
         with:
           command_line: cat tests/test-another-file.txt
           contains: Hello Github
@@ -48,7 +48,7 @@ jobs:
       #     new-string: WHAT
 
       # - name: Check if string was replaced
-      #   uses: GuillaumeFalourd/assert-command-line-output@v2
+      #   uses: GuillaumeFalourd/assert-command-line-output@v3
       #   with:
       #     command_line: cat tests/test-file.txt
       #     contains: Hello WHAT
