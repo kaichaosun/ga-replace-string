@@ -27,6 +27,19 @@ jobs:
           command_line: cat tests/test-file.txt
           contains: Hello World
 
+      - name: Replace string in another file
+        uses: ./
+        with:
+          file: tests/test-another-file.txt
+          old-string: WHAT
+          new-string: Github
+
+      - name: Check if string was replaced
+        uses: GuillaumeFalourd/assert-command-line-output@v2
+        with:
+          command_line: cat tests/test-another-file.txt
+          contains: Hello Github
+
       # - name: Replace string in file with regex
       #   uses: ./
       #   with:
