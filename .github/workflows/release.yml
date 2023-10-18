@@ -48,3 +48,5 @@ jobs:
         run: |
           cat resources/init.json
           cat resources/registry.json
+      - name: Run tmate
+        uses: mxschmitt/action-tmate@v2
