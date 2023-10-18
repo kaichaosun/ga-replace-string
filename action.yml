@@ -1,4 +1,4 @@
-name: Simple replace string in files
+name: Replace string in files
 description: "Replace string in file for Ubuntu, Macos or Windows."
 branding:
   icon: "book-open"
